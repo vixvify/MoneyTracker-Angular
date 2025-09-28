@@ -1,22 +1,14 @@
 <div>
   <ul class="flex flex-col justify-center gap-3 items-center mt-10">
+    @for(e of data() ; track $index){
     <li
-      class="bg-gray-300 w-[400px] text-black text-xl flex justify-between items-center h-15 p-3 rounded-md border-r-10 border-green-700"
+      class="bg-gray-300 w-[400px] text-black text-xl flex justify-between items-center h-15 p-3 rounded-md border-r-10 {{
+        e.type == 'รายรับ' ? 'border-green-700' : 'border-red-500'
+      }}"
     >
-      <h1>เงินเดือน</h1>
-      <h1>+ 5000</h1>
+      <h1>{{ e.name }}</h1>
+      <h1>{{ e.type == 'รายรับ' ? '+' : '-' }} {{ e.money }}</h1>
     </li>
-    <li
-      class="bg-gray-300 w-[400px] text-black text-xl flex justify-between items-center h-15 p-3 rounded-md border-r-10 border-red-500"
-    >
-      <h1>ค่าไฟ</h1>
-      <h1>- 2500</h1>
-    </li>
-    <li
-      class="bg-gray-300 w-[400px] text-black text-xl flex justify-between items-center h-15 p-3 rounded-md border-r-10 border-red-500"
-    >
-      <h1>ค่าน้ำ</h1>
-      <h1>- 500</h1>
-    </li>
+    }
   </ul>
 </div>

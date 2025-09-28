@@ -4,19 +4,19 @@
       class="bg-blue-600 text-white p-5 rounded-2xl shadow-[0px_4px_43px_14px_rgba(0,_0,_0,_0.1)]"
     >
       <h2>ยอดคงเหลือ (บาท)</h2>
-      <h1 class="font-medium text-4xl">3,000 บาท</h1>
+      <h1 class="font-medium text-4xl">{{ total().toLocaleString() }} บาท</h1>
     </div>
     <div
       class="bg-green-600 text-white p-5 rounded-2xl shadow-[0px_4px_43px_14px_rgba(0,_0,_0,_0.1)]"
     >
       <h1>รายรับ (บาท)</h1>
-      <h1 class="font-medium text-4xl">5,000 บาท</h1>
+      <h1 class="font-medium text-4xl">{{ earn().toLocaleString() }} บาท</h1>
     </div>
     <div
       class="bg-red-600 text-white p-5 rounded-2xl shadow-[0px_4px_43px_14px_rgba(0,_0,_0,_0.1)]"
     >
       <h2>รายจ่าย (บาท)</h2>
-      <h1 class="font-medium text-4xl">2,000 บาท</h1>
+      <h1 class="font-medium text-4xl">{{ pay().toLocaleString() }} บาท</h1>
     </div>
   </div>
 </div>

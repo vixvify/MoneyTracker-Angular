@@ -1,7 +1,9 @@
 import { Component, signal, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
-interface Data {
+export interface Data {
   name: string;
   money: number;
   type: string;
@@ -14,6 +16,7 @@ interface Data {
   styleUrl: './form.css',
 })
 export class Form {
+  constructor(private dataservice: DataService, private router: Router) {}
   name = signal<string>('');
   money = signal<number>(0);
   type = signal<string>('');
@@ -25,6 +28,7 @@ export class Form {
       money: this.money(),
       type: this.type(),
     };
-    this.onSend.emit(data);
+    this.dataservice.sendData(data);
+    this.router.navigate(['/']);
   }
 }
