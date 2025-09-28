@@ -1,0 +1,18 @@
+<div class="flex flex-col justify-center items-center mt-20">
+  <h1 class="text-5xl font-medium">บันทึกรายการ</h1>
+  <form class="flex flex-col gap-2 w-[350px] mt-10" (ngSubmit)="sendData()">
+    <p class="text-xl">ชื่อรายการ</p>
+    <input type="text" class="border-2 border-black h-10" [(ngModel)]="name" name="name" />
+    <p class="text-xl">จำนวนเงิน</p>
+    <input type="text" class="border-2 border-black h-10" [(ngModel)]="money" name="money" />
+    <p class="text-xl">ประเภทรายการ</p>
+    <select class="border-2 border-blac text-xl h-10" [(ngModel)]="type" name="type">
+      <option hidden>เลือกประเภทรายการ</option>
+      <option>รายรับ</option>
+      <option>รายจ่าย</option>
+    </select>
+    <button type="submit" class="bg-blue-600 p-3 text-white rounded-md mt-5 text-xl">
+      บันทึกรายการ
+    </button>
+  </form>
+</div>
